@@ -1,44 +1,49 @@
-# PRD - AI Career Navigator
+# PRD - AI Career Mentor
 
 ## Product Name
-AI Career Navigator
+AI Career Mentor
 
 ## Purpose
-Bu uygulama, staj ve iş başvurularında reddedilen öğrencilerin neden elendiklerini anlamalarına ve kendilerini geliştirmelerine yardımcı olur.
+AI Career Mentor helps young people prepare for internships and entry-level job opportunities. It supports users before applications, before interviews, and after rejections by providing guidance that is usually not equally accessible to everyone.
 
 ## Target Users
-- Üniversite öğrencileri
-- Yeni mezunlar
-- Staj arayan gençler
+- University students
+- Recent graduates
+- Internship applicants
+- Entry-level job seekers
 
 ## Main Features
-1. CV analizi
-2. Eksik skill analizi
-3. Olası reddedilme nedenleri
-4. Gelişim önerileri
-5. Başvuru mesajı üretimi
+1. CV upload / CV summary analysis
+2. Company-specific preparation guidance
+3. Interview preparation support
+4. Possible rejection reason analysis
+5. Personalized improvement suggestions
+6. Sample application message generation
 
 ## Input
-Kullanıcıdan alınan bilgiler:
-- Bölüm
-- Hedef pozisyon
-- CV / deneyim özeti
-- (Opsiyonel) reddedilme durumu
+The user provides:
+- Department
+- Target role
+- Company name
+- CV summary or uploaded CV
+- Application stage
+- Optional rejection information
 
 ## Output
-AI kullanıcıya:
-- Güçlü yönler
-- Eksik alanlar
-- Olası reddedilme nedenleri
-- Gelişim önerileri
-- Örnek başvuru mesajı verir
+The system provides:
+- CV match insight
+- Missing skills
+- Company preparation advice
+- Interview readiness tips
+- Possible rejection reasons
+- Personalized next-step recommendations
 
 ## Screens
 ### 1. Input Screen
-Kullanıcının bilgilerini girdiği ekran
+The user enters all application-related information.
 
-### 2. Result Screen
-AI analiz sonuçlarının gösterildiği ekran
+### 2. Results Screen
+The system shows structured career guidance and analysis.
 
 ## Success Metric
-Kullanıcı, eksiklerini anlayıp başvuru sürecini geliştirebiliyorsa proje başarılıdır.
+The user should leave the platform with clear and actionable steps to improve their chances of success.
