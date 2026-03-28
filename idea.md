@@ -1,21 +1,19 @@
-# AI Career Navigator
+# AI Career Mentor
 
 ## Problem
-Birçok üniversite öğrencisi staj ve iş başvurularında sürekli reddediliyor. Ancak neden reddedildiklerini ve kendilerini nasıl geliştireceklerini bilmiyorlar.
+Many young people spend years in education, yet they struggle to turn that effort into internship and job opportunities. They often apply without understanding company expectations, interview preparation, or why they are being rejected. As a result, their potential can go to waste not because they are incapable, but because they are underprepared.
 
-## Kullanıcı
-Staj veya iş arayan üniversite öğrencileri ve yeni mezunlar
+## User
+University students and recent graduates applying for internships and entry-level roles.
 
-## AI'ın Rolü
-Yapay zeka:
-- CV analizi yapar
-- Eksikleri belirler
-- Reddedilme nedenlerini tahmin eder
-- Gelişim önerileri sunar
-- Başvuru mesajı oluşturur
+## AI's Role
+The AI analyzes the user's CV, target role, and company information. It identifies missing skills, explains possible rejection reasons, suggests interview preparation strategies, and gives personalized improvement advice.
 
-## Rakip Durum
-LinkedIn ve Youthall gibi platformlar sadece ilan listeler. Ancak kullanıcıya neden reddedildiğini veya nasıl gelişeceğini söylemez.
+## Competitor Situation
+Platforms like LinkedIn, Youthall, and Kariyer.net mainly focus on listing opportunities. However, they do not deeply prepare users for those opportunities. AI Career Mentor is different because it acts as a preparation, guidance, and career improvement system rather than a job board.
 
-## Başarı Kriteri
-Kullanıcı daha bilinçli başvuru yapar ve kabul alma ihtimali artar.
+## Social Impact
+This project aims to reduce the gap between education and opportunity. Many young people do not have access to mentors, insider knowledge, or application guidance. By making career preparation more accessible, this tool helps prevent talent and education from being wasted.
+
+## Success Criteria
+A student can upload their CV, choose a target company and role, and receive actionable guidance before an interview or after a rejection.
