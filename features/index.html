@@ -2,25 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI Career Navigator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Career Mentor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <h1>AI Career Navigator</h1>
-  <p>Find out why you are getting rejected and how to improve your applications.</p>
+  <h1>AI Career Mentor</h1>
+  <p class="subtitle">
+    AI-powered career assistant that helps young people prepare better for internships and job opportunities.
+  </p>
 
-  <input type="text" id="department" placeholder="Your Department">
-  <input type="text" id="position" placeholder="Target Position">
-  <textarea id="experience" placeholder="Your experience..."></textarea>
+  <div class="form-section">
+    <label for="department">Department</label>
+    <input type="text" id="department" placeholder="e.g. Industrial Engineering">
 
-  <button onclick="analyze()">Analyze</button>
+    <label for="role">Target Role</label>
+    <input type="text" id="role" placeholder="e.g. Operations Research Intern">
 
-  <div id="result"></div>
+    <label for="company">Company Name</label>
+    <input type="text" id="company" placeholder="e.g. Ford Otosan">
+
+    <label for="stage">Application Stage</label>
+    <select id="stage">
+      <option value="">Select stage</option>
+      <option value="before-application">Before Application</option>
+      <option value="before-interview">Before Interview</option>
+      <option value="after-rejection">After Rejection</option>
+    </select>
+
+    <label for="cvFile">Upload CV</label>
+    <input type="file" id="cvFile" accept=".pdf,.doc,.docx">
+
+    <label for="experience">CV Summary / Experience</label>
+    <textarea id="experience" placeholder="Write your experience, projects, skills, leadership, internships..."></textarea>
+
+    <label for="rejection">If Rejected, What Happened?</label>
+    <textarea id="rejection" placeholder="Optional: write what happened in the process"></textarea>
+
+    <button onclick="analyzeCareerMentor()">Analyze My Career Path</button>
+  </div>
+
+  <div id="loadingBox" class="loading-box hidden">
+    Analyzing your profile, company fit, and interview readiness...
+  </div>
+
+  <div id="resultsSection" class="results-section hidden">
+    <h2>Your Career Analysis</h2>
+
+    <div class="result-card">
+      <h3>CV Match Insight</h3>
+      <p id="cvMatch"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>Missing Skills</h3>
+      <p id="missingSkills"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>Company Preparation</h3>
+      <p id="companyPrep"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>Interview Readiness</h3>
+      <p id="interviewPrep"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>Possible Rejection Reasons</h3>
+      <p id="rejectionReasons"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>Suggested Next Steps</h3>
+      <p id="nextSteps"></p>
+    </div>
+
+    <div class="result-card">
+      <h3>Sample Application Message</h3>
+      <p id="sampleMessage"></p>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
