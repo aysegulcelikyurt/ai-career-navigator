@@ -1,32 +1,33 @@
 # Tasks
 
 ## Task 1
-Basit bir kullanıcı arayüzü oluştur:
-- Başlık
-- Açıklama
-- Form alanları
-- Analiz butonu
+Redesign the interface to make it look like a real product
 
 ## Task 2
-Kullanıcıdan şu bilgileri al:
-- Bölüm
-- Hedef pozisyon
-- Deneyim / CV özeti
-- Reddedilme durumu (opsiyonel)
+Add fields for:
+- department
+- target role
+- company name
+- application stage
+- CV upload
+- CV summary
+- rejection context
 
 ## Task 3
-Girilen bilgilere göre örnek AI çıktısı oluştur ve ekranda göster
+Generate structured output sections:
+- CV Match Insight
+- Missing Skills
+- Company Preparation
+- Interview Readiness
+- Possible Rejection Reasons
+- Suggested Next Steps
+- Sample Application Message
 
 ## Task 4
-Çıktıyı şu başlıklarla göster:
-- Güçlü Yönler
-- Eksikler
-- Olası Reddedilme Sebepleri
-- Gelişim Önerileri
-- Örnek Başvuru Mesajı
+Make the analysis feel dynamic and role-aware
 
 ## Task 5
-Tasarımı düzenle ve mobil uyumlu hale getir
+Strengthen the product positioning with social impact messaging
 
 ## Task 6
-README dosyasını güncelle ve proje çalıştırma adımlarını ekle
+Prepare README, project vision, and social impact documentation
