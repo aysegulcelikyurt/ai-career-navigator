@@ -1,2 +1,1 @@
-# ai-career-navigator
-AI-powered career assistant that helps students understand rejection reasons and improve internship applications.
+From application to interview — helping young people prepare, improve, and access opportunities fairly
