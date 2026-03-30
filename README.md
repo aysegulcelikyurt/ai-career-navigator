@@ -24,7 +24,7 @@ AI Career Mentor helps young people become ready for those opportunities.**
 This project addresses an important hidden inequality: some young people have mentors, guidance, and career support, while many others do not. AI Career Mentor aims to make career preparation more accessible and help more young people turn education into real opportunity.
 
 ## Live Demo
-https://aysegulcelikyurt.github.io/ai-career-navigator/
+https://ai-career-navigator-bkxj.vercel.app/features/index.html
 
 ## Main Features
 - CV upload field
