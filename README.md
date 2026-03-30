@@ -32,7 +32,7 @@ This helps students turn uncertainty into clear, actionable career guidance.
 https://ai-career-navigator-bkxj.vercel.app/features/index.html
 
 **Demo Video:**  
-[[PASTE YOUR LOOM VIDEO LINK HERE]](https://www.loom.com/share/d06cb41e8b464df5969dc44c99e2bbdb)
+https://www.loom.com/share/d06cb41e8b464df5969dc44c99e2bbdb
 
 ## GitHub Repository
 
