@@ -97,3 +97,39 @@ It is responsible for:
 ---
 
 ## 📁 Project Structure
+ai-career-navigator/
+│
+├── backend/ # Flask backend (AI logic)
+├── features/ # Frontend (HTML, CSS, JS)
+│
+├── README.md
+├── idea.md
+├── user-flow.md
+├── tech-stack.md
+├── prd.md
+├── tasks.md
+
+
+---
+
+## ⚙️ How to Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/aysegulcelikyurt/ai-career-navigator.git
+cd ai-career-navigator
+
+### 2. Run backend
+
+cd backend
+pip install -r requirements.txt
+python app.py
+
+###  3. Run frontend
+
+cd features
+python3 -m http.server 5500
+
+Open in browser:
+http://localhost:5500
