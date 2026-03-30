@@ -9,6 +9,19 @@ University students and recent graduates applying for internships and entry-leve
 ## AI's Role
 The AI analyzes the user's CV, target role, and company information. It identifies missing skills, explains possible rejection reasons, suggests interview preparation strategies, and gives personalized improvement advice.
 
+## What Makes This Different?
+
+Unlike traditional job platforms, this system does not just list opportunities — it **actively prepares the candidate**.
+
+Key differentiators:
+
+- Personalized analysis based on **target role + company**
+- Structured output (score, strengths, gaps, roadmap)
+- Actionable insights instead of generic advice
+- Focus on **career readiness**, not job listing
+
+This transforms the platform from a passive tool into an **active career mentor**.
+
 ## Competitor Situation
 Platforms like LinkedIn, Youthall, and Kariyer.net mainly focus on listing opportunities. However, they do not deeply prepare users for those opportunities. AI Career Mentor is different because it acts as a preparation, guidance, and career improvement system rather than a job board.
 
