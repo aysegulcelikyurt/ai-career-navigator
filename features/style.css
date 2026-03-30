@@ -1,112 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #eef2f7;
   margin: 0;
-  padding: 30px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f6fb;
   color: #1f2937;
 }
 
+.page {
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
 .container {
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
-  background: #ffffff;
-  padding: 35px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #e8f0ff, #f5f8ff);
+  border: 1px solid #d8e2f2;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+  margin-bottom: 24px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 42px;
+.hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #0f172a;
 }
 
-.subtitle {
-  text-align: center;
-  color: #4b5563;
-  margin-bottom: 30px;
-  line-height: 1.5;
+.hero p {
+  margin: 0;
+  font-size: 16px;
+  color: #475569;
 }
 
-.form-section label {
+.career-form,
+.result-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+.career-form {
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
   display: block;
-  margin-top: 16px;
-  margin-bottom: 6px;
-  font-weight: bold;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #1e293b;
 }
 
-input,
+input[type="text"],
+select,
 textarea,
-select {
+input[type="file"] {
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
   font-size: 15px;
+  background: #fff;
 }
 
 textarea {
-  min-height: 110px;
   resize: vertical;
+  min-height: 120px;
 }
 
-button {
-  margin-top: 22px;
+input[type="text"]:focus,
+select:focus,
+textarea:focus,
+input[type="file"]:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.submit-btn {
   width: 100%;
-  padding: 14px;
-  background: #2563eb;
-  color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  padding: 15px 18px;
   font-size: 16px;
+  font-weight: 700;
+  background: #2563eb;
+  color: #fff;
   cursor: pointer;
-  font-weight: bold;
+  transition: 0.2s ease;
 }
 
-button:hover {
-  opacity: 0.92;
+.submit-btn:hover {
+  background: #1d4ed8;
 }
 
-.loading-box {
-  margin-top: 24px;
-  padding: 18px;
-  background: #dbeafe;
-  border-radius: 12px;
-  font-weight: bold;
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
 }
 
-.results-section {
-  margin-top: 30px;
-}
-
-.results-section h2 {
-  margin-bottom: 18px;
-}
-
-.result-card {
-  background: #f8fafc;
-  border-left: 5px solid #2563eb;
-  padding: 18px;
-  margin-bottom: 18px;
-  border-radius: 12px;
-}
-
-.result-card h3 {
+.result-section h2 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  font-size: 22px;
+  color: #0f172a;
+}
+
+.loading,
+.error {
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.loading {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
 }
 
 .hidden {
   display: none;
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 22px;
+.score-card {
+  background: #475569;
+  color: white;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.score-label {
+  font-size: 18px;
+  opacity: 0.95;
+  margin-bottom: 8px;
+}
+
+.score-value {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.headline-box {
+  background: #e8eefc;
+  color: #1e3a8a;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-weight: 700;
+}
+
+.info-card {
+  background: #f8fafc;
+  border-left: 5px solid #2563eb;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+
+.info-card p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.info-card li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.week-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.week-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.week-focus {
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 26px;
   }
 
-  h1 {
-    font-size: 32px;
+  .score-value {
+    font-size: 42px;
+  }
+
+  .career-form,
+  .result-section,
+  .hero {
+    padding: 18px;
   }
 }

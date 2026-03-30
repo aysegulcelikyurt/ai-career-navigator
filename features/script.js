@@ -1,81 +1,146 @@
-
-function analyzeCareerMentor() {
-  const department = document.getElementById("department").value;
-  const role = document.getElementById("role").value;
-  const company = document.getElementById("company").value;
-  const stage = document.getElementById("stage").value;
-  const experience = document.getElementById("experience").value;
-  const rejection = document.getElementById("rejection").value;
-  const cvFile = document.getElementById("cvFile").files[0];
-
-  const loadingBox = document.getElementById("loadingBox");
-  const resultsSection = document.getElementById("resultsSection");
-
-  loadingBox.classList.remove("hidden");
-  resultsSection.classList.add("hidden");
-
-  setTimeout(() => {
-    let cvMatchText = `Your background in ${department || "your field"} shows potential for the ${role || "target role"} role, but your profile would be stronger with clearer achievements and better alignment with the position.`;
-
-    let missingSkillsText = `You may need stronger project experience, clearer role-specific skills, and more practical examples that show impact.`;
-
-    let companyPrepText = `Before applying to ${company || "this company"}, research its values, industry position, work culture, and recent developments.`;
-
-    let interviewPrepText = `Be ready to explain why you want ${role || "this role"}, why you chose ${company || "this company"}, and how your background makes you a strong candidate.`;
-
-    let rejectionReasonsText = `Possible rejection reasons may include insufficient tailoring, weak CV positioning, lack of practical experience, or stronger competition from other candidates.`;
-
-    let nextStepsText = `Strengthen your CV, tailor your applications, add measurable project experience, and practice answering interview questions with confidence.`;
-
-    let sampleMessageText = `Hello, I am a ${department || "motivated"} student interested in the ${role || "position"} opportunity at ${company || "your company"}. I am eager to contribute, learn, and grow in this field.`;
-
-    if (cvFile) {
-      cvMatchText = `Your uploaded CV shows that you are serious about your applications. To improve your chances, it should clearly connect your skills and experience to ${role || "the target role"}.`;
-    }
-
-    if (experience.length > 80) {
-      missingSkillsText = `You already have a good foundation, but your experience should be communicated more strategically with stronger structure, role relevance, and measurable impact.`;
-    }
-
-    if (stage === "before-interview") {
-      interviewPrepText = `Since you are at the interview stage, focus on behavioral questions, motivation, company knowledge, and examples that show problem solving, teamwork, and learning ability.`;
-    }
-
-    if (stage === "after-rejection" || rejection.trim() !== "") {
-      rejectionReasonsText = `Based on your rejection context, your profile may not have stood out enough, your skills may not have matched the role clearly, or your strengths may not have been communicated effectively.`;
-      nextStepsText = `Review the job expectations, compare your background with stronger candidates, improve your CV positioning, and build more targeted experience for future applications.`;
-    }
-
-    if (company.toLowerCase().includes("ford")) {
-      companyPrepText = `Ford Otosan is likely to value structured thinking, teamwork, adaptability, analytical ability, and interest in real operational systems. Research the company culture, production environment, and innovation mindset before the interview.`;
-    }
-
-    if (role.toLowerCase().includes("operations")) {
-      missingSkillsText = `For operations-focused roles, stronger evidence in process improvement, Excel, analytics, optimization, and structured problem solving would make your profile more competitive.`;
-    }
-
-    document.getElementById("cvMatch").innerText = cvMatchText;
-    document.getElementById("missingSkills").innerText = missingSkillsText;
-    document.getElementById("companyPrep").innerText = companyPrepText;
-    document.getElementById("interviewPrep").innerText = interviewPrepText;
-    document.getElementById("rejectionReasons").innerText = rejectionReasonsText;
-    document.getElementById("nextSteps").innerText = nextStepsText;
-    document.getElementById("sampleMessage").innerText = sampleMessageText;
-
-    loadingBox.classList.add("hidden");
-    resultsSection.classList.remove("hidden");
-  }, 1200);
-}
-
 window.onload = function () {
+    const loadingBox = document.getElementById("loadingBox");
+    const resultBox = document.getElementById("resultBox");
+    const errorBox = document.getElementById("errorBox");
+  
+    if (loadingBox) {
+      loadingBox.classList.add("hidden");
+    }
+  
+    if (resultBox) {
+      resultBox.innerHTML = "";
+    }
+  
+    if (errorBox) {
+      errorBox.classList.add("hidden");
+      errorBox.textContent = "";
+    }
+  };
+  
+  const form = document.getElementById("careerForm");
+  const resultBox = document.getElementById("resultBox");
   const loadingBox = document.getElementById("loadingBox");
-  const resultsSection = document.getElementById("resultsSection");
-
-  if (loadingBox) {
-    loadingBox.classList.add("hidden");
+  const errorBox = document.getElementById("errorBox");
+  const submitBtn = document.querySelector(".submit-btn");
+  
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    loadingBox.classList.remove("hidden");
+    errorBox.classList.add("hidden");
+    errorBox.textContent = "";
+    resultBox.innerHTML = "";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Analyzing...";
+  
+    const formData = new FormData(form);
+  
+    try {
+      const response = await fetch("https://aygulse-ai-career-backend.hf.space/analyze", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || "Analysis failed.");
+      }
+  
+      renderAnalysis(data.analysis);
+    } catch (error) {
+      console.error(error);
+      errorBox.textContent = error.message || "Something went wrong.";
+      errorBox.classList.remove("hidden");
+    } finally {
+      loadingBox.classList.add("hidden");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Analyze My Career Path";
+    }
+  });
+  
+  function renderAnalysis(analysis) {
+    if (!analysis) {
+      resultBox.innerHTML = "<p>No analysis returned.</p>";
+      return;
+    }
+  
+    const score = analysis.score ?? 0;
+    const headline = analysis.headline ?? "";
+    const verdict = analysis.verdict ?? "";
+    const strengths = Array.isArray(analysis.strengths) ? analysis.strengths : [];
+    const gaps = Array.isArray(analysis.gaps) ? analysis.gaps : [];
+    const roadmap = Array.isArray(analysis.roadmap_30_day) ? analysis.roadmap_30_day : [];
+  
+    resultBox.innerHTML = `
+      <div class="score-card">
+        <div class="score-label">Competitiveness Score</div>
+        <div class="score-value">${score}/100</div>
+        <div class="headline-box">${escapeHtml(headline)}</div>
+      </div>
+  
+      <div class="info-card">
+        <h3>🧠 Verdict</h3>
+        <p>${escapeHtml(verdict)}</p>
+      </div>
+  
+      <div class="info-card">
+        <h3>💪 Strengths</h3>
+        ${renderList(strengths)}
+      </div>
+  
+      <div class="info-card">
+        <h3>⚠️ Gaps</h3>
+        ${renderList(gaps)}
+      </div>
+  
+      <div class="info-card">
+        <h3>📅 30-Day Plan</h3>
+        ${renderRoadmap(roadmap)}
+      </div>
+    `;
   }
-
-  if (resultsSection) {
-    resultsSection.classList.add("hidden");
+  
+  function renderList(items) {
+    if (!items.length) {
+      return "<p>No items available.</p>";
+    }
+  
+    return `
+      <ul>
+        ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+      </ul>
+    `;
   }
-};
+  
+  function renderRoadmap(weeks) {
+    if (!weeks.length) {
+      return "<p>No roadmap available.</p>";
+    }
+  
+    return weeks
+      .map((week) => {
+        const weekTitle = week.week || "Week";
+        const focus = week.focus || "";
+        const actions = Array.isArray(week.actions) ? week.actions : [];
+  
+        return `
+          <div class="week-card">
+            <h4>${escapeHtml(weekTitle)}</h4>
+            <div class="week-focus">${escapeHtml(focus)}</div>
+            ${renderList(actions)}
+          </div>
+        `;
+      })
+      .join("");
+  }
+  
+  function escapeHtml(text) {
+    if (text === null || text === undefined) return "";
+    return String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }

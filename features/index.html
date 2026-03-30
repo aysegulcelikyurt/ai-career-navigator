@@ -1,93 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Career Mentor</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Career Navigator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
+    <div class="container">
+      <div class="hero">
+        <h1>Fill the form and get your personalized AI career roadmap 🚀</h1>
+        <p>
+          Understand how competitive you are and what to improve to land your dream internship.
+        </p>
+      </div>
 
-<div class="container">
-  <h1>AI Career Mentor</h1>
-  <p class="subtitle">
-    AI-powered career assistant that helps young people prepare better for internships and job opportunities.
-  </p>
+      <form id="careerForm" class="career-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input id="department" type="text" name="department" value="COMPUTER ENGINEERING" required />
+        </div>
 
-  <div class="form-section">
-    <label for="department">Department</label>
-    <input type="text" id="department" placeholder="e.g. Industrial Engineering">
+        <div class="form-group">
+          <label for="target_role">Target Role</label>
+          <input id="target_role" type="text" name="target_role" value="Software Engineering Intern" required />
+        </div>
 
-    <label for="role">Target Role</label>
-    <input type="text" id="role" placeholder="e.g. Operations Research Intern">
+        <div class="form-group">
+          <label for="company_name">Company Name</label>
+          <input id="company_name" type="text" name="company_name" value="Trendyol" required />
+        </div>
 
-    <label for="company">Company Name</label>
-    <input type="text" id="company" placeholder="e.g. Ford Otosan">
+        <div class="form-group">
+          <label for="application_stage">Application Stage</label>
+          <select id="application_stage" name="application_stage" required>
+            <option value="Before Application">Before Application</option>
+            <option value="Before Interview">Before Interview</option>
+            <option value="After Rejection">After Rejection</option>
+          </select>
+        </div>
 
-    <label for="stage">Application Stage</label>
-    <select id="stage">
-      <option value="">Select stage</option>
-      <option value="before-application">Before Application</option>
-      <option value="before-interview">Before Interview</option>
-      <option value="after-rejection">After Rejection</option>
-    </select>
+        <div class="form-group">
+          <label for="cv_file">Upload CV (optional - AI will read it and use it)</label>
+          <input id="cv_file" type="file" name="cv_file" accept=".pdf" />
+        </div>
 
-    <label for="cvFile">Upload CV</label>
-    <input type="file" id="cvFile" accept=".pdf,.doc,.docx">
+        <div class="form-group">
+          <label for="cv_summary">CV Summary / Experience</label>
+          <textarea
+            id="cv_summary"
+            name="cv_summary"
+            rows="6"
+            placeholder="Write your experience, projects, skills, leadership, internships..."
+          ></textarea>
+        </div>
 
-    <label for="experience">CV Summary / Experience</label>
-    <textarea id="experience" placeholder="Write your experience, projects, skills, leadership, internships..."></textarea>
+        <div class="form-group">
+          <label for="rejection_reason">If Rejected, What Happened?</label>
+          <textarea
+            id="rejection_reason"
+            name="rejection_reason"
+            rows="4"
+            placeholder="Optional: write what happened in the process"
+          ></textarea>
+        </div>
 
-    <label for="rejection">If Rejected, What Happened?</label>
-    <textarea id="rejection" placeholder="Optional: write what happened in the process"></textarea>
+        <button type="submit" class="submit-btn">Analyze My Career Path</button>
+      </form>
 
-    <button onclick="analyzeCareerMentor()">Analyze My Career Path</button>
-  </div>
-
-  <div id="loadingBox" class="loading-box hidden">
-    Analyzing your profile, company fit, and interview readiness...
-  </div>
-
-  <div id="resultsSection" class="results-section hidden">
-    <h2>Your Career Analysis</h2>
-
-    <div class="result-card">
-      <h3>CV Match Insight</h3>
-      <p id="cvMatch"></p>
-    </div>
-
-    <div class="result-card">
-      <h3>Missing Skills</h3>
-      <p id="missingSkills"></p>
-    </div>
-
-    <div class="result-card">
-      <h3>Company Preparation</h3>
-      <p id="companyPrep"></p>
-    </div>
-
-    <div class="result-card">
-      <h3>Interview Readiness</h3>
-      <p id="interviewPrep"></p>
-    </div>
-
-    <div class="result-card">
-      <h3>Possible Rejection Reasons</h3>
-      <p id="rejectionReasons"></p>
-    </div>
-
-    <div class="result-card">
-      <h3>Suggested Next Steps</h3>
-      <p id="nextSteps"></p>
-    </div>
-
-    <div class="result-card">
-      <h3>Sample Application Message</h3>
-      <p id="sampleMessage"></p>
+      <section class="result-section">
+        <h2>Your Career Analysis</h2>
+        <div id="loadingBox" class="loading hidden">Analyzing your profile...</div>
+        <div id="errorBox" class="error hidden"></div>
+        <div id="resultBox"></div>
+      </section>
     </div>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
