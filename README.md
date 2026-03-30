@@ -120,14 +120,12 @@ ai-career-navigator/
 git clone https://github.com/aysegulcelikyurt/ai-career-navigator.git
 cd ai-career-navigator
 
-### 2. Run backend
-
+2. Run backend
 cd backend
 pip install -r requirements.txt
 python app.py
 
-###  3. Run frontend
-
+3. Run frontend
 cd features
 python3 -m http.server 5500
 
