@@ -95,12 +95,13 @@ It is responsible for:
 5. Results are displayed in UI  
 
 ---
-
 ## 📁 Project Structure
+
+```
 ai-career-navigator/
 │
-├── backend/ # Flask backend (AI logic)
-├── features/ # Frontend (HTML, CSS, JS)
+├── backend/            # Flask backend (AI logic)
+├── features/           # Frontend (HTML, CSS, JS)
 │
 ├── README.md
 ├── idea.md
@@ -108,6 +109,7 @@ ai-career-navigator/
 ├── tech-stack.md
 ├── prd.md
 ├── tasks.md
+```
 
 
 ---
