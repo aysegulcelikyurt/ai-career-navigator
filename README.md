@@ -26,7 +26,6 @@ The system then generates:
 
 This helps students turn uncertainty into clear, actionable career guidance.
 
-## Live Demo
 
 **Published App:**  
 https://ai-career-navigator-bkxj.vercel.app/features/index.html
