@@ -1,56 +1,145 @@
-# AI Career Mentor
+# AI Career Navigator 🚀
 
 ## Problem
-Many students and recent graduates apply to internships and entry-level jobs without enough preparation, guidance, or access to insider knowledge. Because of this, they are often rejected without understanding why, and their education and potential may go to waste.
+
+University students often struggle to understand why they get rejected from internships or how competitive they really are for a target role. Most applications provide little to no feedback, which makes it difficult for students to identify their weaknesses, improve their CVs, and prepare stronger applications.
 
 ## Solution
-AI Career Mentor is an AI-powered career preparation assistant. Instead of only showing opportunities, it helps users become more ready for those opportunities.
 
-The system is designed to:
-- analyze CV content
-- identify missing skills
-- explain possible rejection reasons
-- provide company-specific preparation advice
-- suggest interview preparation strategies
-- generate personalized application messages
+AI Career Navigator is an AI-powered web application that helps students evaluate their internship readiness and improve their future applications.
 
-## Why It Is Different
-Existing platforms such as LinkedIn, Youthall, and Kariyer.net mainly list jobs and internships. AI Career Mentor focuses on preparation, guidance, and improvement.
+The user enters:
+- department
+- target role
+- company name
+- application stage
+- CV summary
+- optional rejection context
+- optional CV upload
 
-**Existing platforms show opportunities.  
-AI Career Mentor helps young people become ready for those opportunities.**
+The system then generates:
+- a competitiveness score
+- a personalized verdict
+- strengths
+- gaps
+- a 30-day improvement plan
 
-## Social Impact
-This project addresses an important hidden inequality: some young people have mentors, guidance, and career support, while many others do not. AI Career Mentor aims to make career preparation more accessible and help more young people turn education into real opportunity.
+This helps students turn uncertainty into clear, actionable career guidance.
 
 ## Live Demo
+
+**Published App:**  
 https://ai-career-navigator-bkxj.vercel.app/features/index.html
 
-## Main Features
-- CV upload field
-- role and company-based analysis
-- missing skills detection
-- interview preparation suggestions
-- rejection reasoning
-- personalized improvement advice
+**Demo Video:**  
+[PASTE YOUR LOOM VIDEO LINK HERE]
+
+## GitHub Repository
+
+https://github.com/aysegulcelikyurt/ai-career-navigator
+
+## Target Users
+
+- university students
+- internship applicants
+- early-career candidates
+- students who want to better understand rejection reasons and improve their profiles
+
+## AI’s Role in the Project
+
+AI is the core engine of the application. It analyzes the candidate’s background and generates structured, personalized feedback.
+
+It is responsible for:
+- evaluating the candidate profile
+- identifying strengths and weaknesses
+- generating a competitiveness score
+- producing a realistic verdict
+- creating a practical 30-day roadmap
+
+## Key Features
+
+- AI-powered internship competitiveness scoring
+- personalized career verdict
+- strengths and gaps analysis
+- 30-day improvement roadmap
+- optional CV upload support
+- company- and role-specific feedback
 
 ## Tech Stack
+
+### Frontend
 - HTML
 - CSS
 - JavaScript
-- GitHub Pages
-- Gemini API (planned integration)
 
-## How to Use
-1. Enter your department, target role, and company
-2. Upload or paste CV-related information
-3. Choose your application/interview stage
-4. Click "Analyze"
-5. Review the guidance and suggestions
+### Backend
+- Python
+- Flask
+- Flask-CORS
 
-## Future Improvements
-- Real CV parsing from uploaded PDF files
-- Gemini API integration
-- Company-specific live insights
-- Interview simulation
-- Personalized learning roadmap
+### AI Integration
+- Gemini API
+- OpenAI-compatible Gemini endpoint
+
+### Deployment
+- Vercel (frontend)
+- Hugging Face Spaces (backend)
+
+## User Flow
+
+1. The user opens the application.
+2. The user enters their department, target role, company name, and application stage.
+3. The user optionally uploads a CV and/or writes a CV summary.
+4. The user clicks the analysis button.
+5. The backend sends the request to the AI model.
+6. The AI generates a structured evaluation.
+7. The result is displayed on the interface with score, verdict, strengths, gaps, and roadmap.
+
+## Project Structure
+
+```text
+ai-career-navigator/
+├── backend/
+├── features/
+├── README.md
+├── idea.md
+├── user-flow.md
+├── tech-stack.md
+├── prd.md
+├── tasks.md
+
+## How to Run Locally
+1. Clone the repository
+git clone https://github.com/aysegulcelikyurt/ai-career-navigator.git
+cd ai-career-navigator
+2. Run the backend
+cd backend
+pip install -r requirements.txt
+python app.py
+3. Run the frontend
+
+Open a new terminal and run:
+
+cd features
+python3 -m http.server 5500
+
+Then open this address in your browser:
+
+http://localhost:5500
+
+Future Improvements
+Improve the consistency of roadmap generation
+Strengthen PDF CV parsing
+Improve structured JSON response reliability
+Add more role-specific prompt variations
+Add user testing feedback integration
+Improve UI for the 30-day roadmap section
+About the Project
+
+This project was built during the AI Buildathon using AI-assisted development and vibe coding. It focuses on solving a real-world problem: students often do not receive meaningful feedback during internship applications.
+
+AI Career Navigator helps them understand how competitive they are, what they are doing well, what they are missing, and what they should improve next.
+
+Repository Link
+
+https://github.com/aysegulcelikyurt/ai-career-navigator
