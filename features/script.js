@@ -114,21 +114,23 @@ window.onload = function () {
   }
   
   function renderRoadmap(weeks) {
-    if (!weeks.length) {
+    if (!weeks || !weeks.length) {
       return "<p>No roadmap available.</p>";
     }
   
     return weeks
       .map((week) => {
-        const weekTitle = week.week || "Week";
-        const focus = week.focus || "";
-        const actions = Array.isArray(week.actions) ? week.actions : [];
-  
         return `
           <div class="week-card">
-            <h4>${escapeHtml(weekTitle)}</h4>
-            <div class="week-focus">${escapeHtml(focus)}</div>
-            ${renderList(actions)}
+            <h4>${escapeHtml(week.week)}</h4>
+            <div class="week-focus">${escapeHtml(week.focus)}</div>
+            <ul>
+              ${
+                week.actions && week.actions.length
+                  ? week.actions.map(a => `<li>${escapeHtml(a)}</li>`).join("")
+                  : "<li>No actions available</li>"
+              }
+            </ul>
           </div>
         `;
       })
